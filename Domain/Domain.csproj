@@ -6,4 +6,15 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="ErrorOr" Version="2.0.1" />
+    <PackageReference Include="MediatR" Version="12.3.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="DomainErrors\" />
+    <Folder Include="ValueObjects\" />
+    <Folder Include="Primitives\" />
+  </ItemGroup>
+
 </Project>
