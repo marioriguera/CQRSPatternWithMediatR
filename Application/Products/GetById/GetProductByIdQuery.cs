@@ -1,9 +1,11 @@
-﻿using Application.Products.Common;
+﻿using Application.Abstractions;
+using Application.Products.Common;
 
 namespace Application.Products.GetById
 {
-    public record GetProductByIdQuery : IRequest<ErrorOr<ProductResponse>>
-    {
-        public Guid Id { get; set; }
-    }
+    /// <summary>
+    /// Represents a query to get a product by its ID.
+    /// </summary>
+    /// <param name="Id">The unique identifier of the product.</param>
+    public sealed record GetProductByIdQuery(Guid Id) : IQuery<ProductResponse>;
 }

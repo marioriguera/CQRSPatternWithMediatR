@@ -27,6 +27,16 @@
 
 ---
 
+## Entity Frameworks commands
+
+**To remember** :)
+
+### Put Migrations folder inside of Persistence folder
+
+```bash
+dotnet ef migrations add InitialMigration --output-dir Persistence/Migrations
+```
+
 <p align="center">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=cs,dotnet,visualstudio,github,docker" />

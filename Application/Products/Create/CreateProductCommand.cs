@@ -1,10 +1,7 @@
-﻿using MediatR;
+﻿using Application.Abstractions;
 
 namespace Application.Products.Create
 {
-    public class CreateProductCommand : IRequest<ErrorOr<Guid>>
-    {
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-    }
+    public sealed record CreateProductCommand(string Name, decimal Price) 
+        : ICommand<Guid>;
 }

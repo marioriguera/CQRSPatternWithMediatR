@@ -1,4 +1,5 @@
-﻿using Domain.Products;
+﻿using Domain.Entities;
+using Domain.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infraestructure.Persistence.Repositories
@@ -14,30 +15,30 @@ namespace Infraestructure.Persistence.Repositories
 
         public async Task<Product> GetByIdAsync(int id, CancellationToken cancellationToken)
         {
-            return await _context.Products.FindAsync([id], cancellationToken);
+            return await _context.Set<Product>().FindAsync([id], cancellationToken);
         }
 
         public async Task<List<Product>> GetAllAsync(CancellationToken cancellationToken)
         {
-            return await _context.Products.ToListAsync(cancellationToken);
+            return await _context.Set<Product>().ToListAsync(cancellationToken);
         }
 
         public async Task AddAsync(Product product, CancellationToken cancellationToken)
         {
-            await _context.Products.AddAsync(product, cancellationToken);
+            await _context.Set<Product>().AddAsync(product, cancellationToken);
         }
 
         public async Task UpdateAsync(Product product, CancellationToken cancellationToken)
         {
-            _context.Products.Update(product);
+            _context.Set<Product>().Update(product);
         }
 
         public async Task DeleteAsync(int id, CancellationToken cancellationToken)
         {
-            var product = await _context.Products.FindAsync(new object[] { id }, cancellationToken);
+            var product = await _context.Set<Product>().FindAsync(new object[] { id }, cancellationToken);
             if (product != null)
             {
-                _context.Products.Remove(product);
+                _context.Set<Product>().Remove(product);
             }
         }
 

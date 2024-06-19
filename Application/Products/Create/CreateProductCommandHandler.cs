@@ -1,8 +1,9 @@
-﻿using Application.Products.Common;
+﻿using Application.Abstractions;
+using Application.Products.Common;
 
 namespace Application.Products.Create
 {
-    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, ErrorOr<Guid>>
+    public class CreateProductCommandHandler : ICommandHandler<CreateProductCommand, Guid>
     {
         //private readonly IProductRepository _productRepository;
 

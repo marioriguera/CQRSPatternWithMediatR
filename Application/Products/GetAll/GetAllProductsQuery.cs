@@ -1,6 +1,10 @@
-﻿using Application.Products.Common;
+﻿using Application.Abstractions;
+using Application.Products.Common;
 
 namespace Application.Products.GetAll
 {
-    public record GetAllProductsQuery() : IRequest<ErrorOr<IReadOnlyList<ProductResponse>>>;
+    /// <summary>
+    /// Represents a query to get all products.
+    /// </summary>
+    public sealed record GetAllProductsQuery() : IQuery<IReadOnlyList<ProductResponse>>;
 }

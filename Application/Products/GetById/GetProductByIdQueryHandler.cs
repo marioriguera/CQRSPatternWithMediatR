@@ -1,8 +1,9 @@
-﻿using Application.Products.Common;
+﻿using Application.Abstractions;
+using Application.Products.Common;
 
 namespace Application.Products.GetById
 {
-    public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, ErrorOr<ProductResponse>>
+    public class GetProductByIdQueryHandler : IQueryHandler<GetProductByIdQuery, ProductResponse>
     {
         // private readonly IProductRepository _productRepository;
 
