@@ -48,37 +48,37 @@ namespace Infraestructure.Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("747a5828-debe-4bfd-a407-bb6334edd647"),
+                            Id = new Guid("ab3b69ed-dca0-429b-932f-21954265990f"),
                             Name = "Potato",
                             Price = 1.05m
                         },
                         new
                         {
-                            Id = new Guid("56b71d61-d9c9-4350-8722-9cbf5c983e5a"),
+                            Id = new Guid("ec78609d-51e3-44a6-9776-abf5f0e8802b"),
                             Name = "Coca Cola",
                             Price = 2.10m
                         },
                         new
                         {
-                            Id = new Guid("a1957ca6-66bf-47d6-9f6b-4e0f4a27e961"),
+                            Id = new Guid("0bf6b028-6cff-4271-bf94-37b5f3c3744f"),
                             Name = "Onion",
                             Price = 0.50m
                         },
                         new
                         {
-                            Id = new Guid("c219cbf9-1518-486c-97f1-28c5cc472be4"),
+                            Id = new Guid("4493afc2-ce99-418a-a0c1-1d9656f27c05"),
                             Name = "Bread",
                             Price = 0.80m
                         },
                         new
                         {
-                            Id = new Guid("6a33b04d-67d8-43a4-91e3-3f1bf73f5860"),
+                            Id = new Guid("cd3c1122-f460-4125-ae0a-53d4b09365b4"),
                             Name = "Meat",
                             Price = 4.15m
                         },
                         new
                         {
-                            Id = new Guid("b620a89d-e67e-45f1-a39f-005868409fa0"),
+                            Id = new Guid("3fdff7e9-5ad5-415e-94bb-9f8bd5dabc10"),
                             Name = "Rice",
                             Price = 1.00m
                         });

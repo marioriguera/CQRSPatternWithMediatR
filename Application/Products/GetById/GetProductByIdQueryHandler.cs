@@ -15,12 +15,7 @@ namespace Application.Products.GetById
         public async Task<ErrorOr<ProductResponse>> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
         {
             // return await _productRepository.GetByIdAsync(request.Id,cancellationToken);
-            ProductResponse product = new()
-            {
-                Id = request.Id,
-                Name = "algo name",
-                Price = 125
-            };
+            ProductResponse product = new(request.Id, "algo mas", 123);
 
             return await Task.FromResult(product);
         }

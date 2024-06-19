@@ -14,12 +14,7 @@ namespace Application.Products.Create
 
         public async Task<ErrorOr<Guid>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
-            var product = new ProductResponse
-            {
-                Name = request.Name,
-                Price = request.Price,
-                Id = Guid.NewGuid(),
-            };
+            var product = new ProductResponse(Guid.NewGuid(), request.Name, request.Price);
 
             // await _productRepository.AddAsync(product, cancellationToken);
             // await _productRepository.SaveChangesAsync(cancellationToken);

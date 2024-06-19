@@ -19,7 +19,7 @@ namespace Api
 
             // Load appsettings.json configuration
             var configuration = new ConfigurationBuilder()
-                .AddJsonFile("appsettings.json")
+                .AddJsonFile("appsettings.Development.json")
                 .Build();
 
             // Add services to the container.
