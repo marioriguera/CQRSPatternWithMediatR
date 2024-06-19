@@ -1,10 +1,9 @@
-﻿using Domain.Products;
-using MediatR;
+﻿using Application.Products.Common;
 
 namespace Application.Products.GetById
 {
-    public class GetProductByIdQuery : IRequest<Product>
+    public record GetProductByIdQuery : IRequest<ErrorOr<ProductResponse>>
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
     }
 }

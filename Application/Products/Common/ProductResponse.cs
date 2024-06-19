@@ -1,6 +1,6 @@
-﻿namespace Domain.Products
+﻿namespace Application.Products.Common
 {
-    public class Product
+    public record ProductResponse
     {
         public Guid Id { get; set; }
         public string Name { get; set; }

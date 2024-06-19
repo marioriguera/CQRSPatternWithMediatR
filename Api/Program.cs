@@ -1,10 +1,18 @@
+using Api.Middlewares;
 using Application;
-using Infraestructure;
+using Infraestructure.Persistence;
 
 namespace Api
 {
+    /// <summary>
+    /// The main entry point for the application.
+    /// </summary>
     public class Program
     {
+        /// <summary>
+        /// Main method to configure and run the web application.
+        /// </summary>
+        /// <param name="args">The command-line arguments.</param>
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -19,7 +27,6 @@ namespace Api
                             .AddApplication()
                             .AddInfraestrucutre(configuration);
 
-
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -33,6 +40,7 @@ namespace Api
 
             app.UseAuthorization();
 
+            app.UseMiddleware<GlobalExceptionHandlingMiddleware>();
 
             app.MapControllers();
 

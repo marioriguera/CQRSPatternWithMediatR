@@ -1,8 +1,7 @@
 ﻿using Domain.Products;
-using Infraestructure.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infraestructure.Repositories
+namespace Infraestructure.Persistence.Repositories
 {
     internal class ProductRepository : IProductRepository
     {

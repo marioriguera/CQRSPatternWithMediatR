@@ -1,7 +1,7 @@
 ﻿using Domain.Products;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infraestructure.Data
+namespace Infraestructure.Persistence
 {
     internal class ApplicationDbContext : DbContext
     {

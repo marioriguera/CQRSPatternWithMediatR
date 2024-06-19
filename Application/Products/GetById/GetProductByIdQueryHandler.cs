@@ -1,9 +1,8 @@
-﻿using Domain.Products;
-using MediatR;
+﻿using Application.Products.Common;
 
 namespace Application.Products.GetById
 {
-    public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, Product>
+    public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, ErrorOr<ProductResponse>>
     {
         // private readonly IProductRepository _productRepository;
 
@@ -12,15 +11,16 @@ namespace Application.Products.GetById
             // _productRepository = productRepository;
         }
 
-        public async Task<Product> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<ProductResponse>> Handle(GetProductByIdQuery request, CancellationToken cancellationToken)
         {
             // return await _productRepository.GetByIdAsync(request.Id,cancellationToken);
-            Product product = new()
+            ProductResponse product = new()
             {
                 Id = request.Id,
                 Name = "algo name",
                 Price = 125
             };
+
             return await Task.FromResult(product);
         }
     }

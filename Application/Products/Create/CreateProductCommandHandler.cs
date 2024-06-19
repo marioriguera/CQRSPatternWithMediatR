@@ -1,9 +1,8 @@
-﻿using Domain.Products;
-using MediatR;
+﻿using Application.Products.Common;
 
 namespace Application.Products.Create
 {
-    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, int>
+    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand, ErrorOr<Guid>>
     {
         //private readonly IProductRepository _productRepository;
 
@@ -12,13 +11,13 @@ namespace Application.Products.Create
             //_productRepository = productRepository;
         }
 
-        public async Task<int> Handle(CreateProductCommand request, CancellationToken cancellationToken)
+        public async Task<ErrorOr<Guid>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
-            var product = new Product
+            var product = new ProductResponse
             {
                 Name = request.Name,
                 Price = request.Price,
-                Id = 1
+                Id = Guid.NewGuid(),
             };
 
             // await _productRepository.AddAsync(product, cancellationToken);

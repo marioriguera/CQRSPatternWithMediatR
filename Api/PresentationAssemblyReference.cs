@@ -2,8 +2,8 @@
 
 namespace Api
 {
-    public class PresentationAssemblyReference
+    public static class PresentationAssemblyReference
     {
-        internal static readonly Assembly Assembly = typeof(PresentationAssemblyReference).Assembly;
+        public static readonly Assembly Assembly = typeof(PresentationAssemblyReference).Assembly;
     }
 }
